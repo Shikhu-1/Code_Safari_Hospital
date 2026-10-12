@@ -1,16 +1,199 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="style.css">
+
+    <title>Contact Us | Code Safari Hospital</title>
+
+    <style>
+        /* General Page Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #EAF4F8;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #123B5D;
+            color: #FFFFFF;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #0D9488;
+            color: #FFFFFF;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 35px;
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(18, 59, 93, 0.12);
+        }
+
+        main h2 {
+            color: #123B5D;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        main > p:first-of-type {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #64748B;
+        }
+
+        /* Contact Information */
+        main > p:not(:first-of-type) {
+            background-color: #EAF4F8;
+            padding: 12px 15px;
+            margin-bottom: 12px;
+            border-left: 4px solid #0D9488;
+            border-radius: 5px;
+        }
+
+        main p strong {
+            color: #123B5D;
+        }
+
+        /* Contact Form */
+        form {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 2px solid #EAF4F8;
+        }
+
+        form label {
+            display: block;
+            color: #123B5D;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 20px;
+            border: 1px solid #CBD5E1;
+            border-radius: 6px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            color: #334155;
+            background-color: #FFFFFF;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            outline: none;
+            border-color: #0D9488;
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+        }
+
+        form textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        /* Submit Button */
+        form button {
+            display: block;
+            width: 100%;
+            background-color: #0D9488;
+            color: #FFFFFF;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        form button:hover {
+            background-color: #0F766E;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #123B5D;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 18px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 26px;
+            }
+
+            nav {
+                gap: 10px;
+            }
+
+            main {
+                margin: 20px 12px;
+                padding: 22px;
+            }
+
+            main h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
     <header>
-        <h1>Contact Us</h1>
+        <h1>Code Safari Hospital</h1>
+
         <nav>
             <a href="index.html">Home</a>
             <a href="contact.html">Contact Us</a>
@@ -19,27 +202,61 @@
 
     <main>
         <h2>Get in Touch</h2>
-        <p>We would love to hear from you.</p>
 
-        <p><strong>Email:</strong> info@example.com</p>
-        <p><strong>Phone:</strong> +254 700 000 000</p>
-        <p><strong>Address:</strong> Nairobi, Kenya</p>
+        <p>
+            We would love to hear from you.
+            Contact us for inquiries, appointments, or assistance.
+        </p>
 
-        <form action="mailto:info@example.com" method="post"
+        <p>
+            <strong>Email:</strong> info@example.com
+        </p>
+
+        <p>
+            <strong>Phone:</strong> +254 700 000 000
+        </p>
+
+        <p>
+            <strong>Address:</strong> Nairobi, Kenya
+        </p>
+
+        <form action="mailto:info@example.com"
+              method="post"
               enctype="text/plain">
-            <label for="name">Your Name:</label><br>
-            <input type="text" id="name" name="Name" required><br><br>
 
-            <label for="email">Your Email:</label><br>
-            <input type="email" id="email" name="Email" required><br><br>
+            <label for="name">Your Name:</label>
+            <input type="text"
+                   id="name"
+                   name="Name"
+                   placeholder="Enter your full name"
+                   required>
 
-            <label for="message">Your Message:</label><br>
-            <textarea id="message" name="Message" rows="5"
-                      required></textarea><br><br>
+            <label for="email">Your Email:</label>
+            <input type="email"
+                   id="email"
+                   name="Email"
+                   placeholder="Enter your email address"
+                   required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message"
+                      name="Message"
+                      rows="5"
+                      placeholder="Write your message here..."
+                      required></textarea>
 
             <button type="submit">Send Message</button>
+
         </form>
     </main>
 
+    <footer>
+        <p>
+            &copy; 2026 Code Safari Hospital.
+            All rights reserved.
+        </p>
+    </footer>
+
 </body>
 </html>
+```
