@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Welcome to Code Safari Hospital. Discover compassionate healthcare, experienced medical professionals and patient-centred medical services.">
+
+    <title>Code Safari Hospital | Compassionate Care. Healthier Lives.</title>
+
+    <style>
+        /* =========================================
+           CODE SAFARI HOSPITAL
+           Official Group Project Design System
+           HTML5 + Internal CSS Only
+           ========================================= */
+
+        /* 1. Official colour palette and global styles */
+        :root {
+            --navy: #123B5D;
+            --teal: #0D9488;
+            --white: #FFFFFF;
+            --light-blue: #EAF4F8;
+            --dark-slate: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--white);
+            color: var(--dark-slate);
+            line-height: 1.7;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--teal);
+            outline-offset: 5px;
+        }
+
+        .container {
+            width: min(1160px, 90%);
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 85px 0;
+        }
+
+        .section-heading {
+            max-width: 720px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--teal);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            color: var(--navy);
+            font-size: clamp(1.9rem, 4vw, 2.8rem);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .section-heading p {
+            color: var(--dark-slate);
+            font-size: 1rem;
+        }
+
+        /* 2. Header and navigation */
+        .site-header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--light-blue);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            min-height: 88px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            flex-shrink: 0;
+        }
+
+        .medical-logo {
+            width: 52px;
+            height: 52px;
+            background-color: var(--navy);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            border-radius: 12px 12px 12px 3px;
+            flex-shrink: 0;
+        }
+
+        .brand-text h1 {
+            color: var(--navy);
+            font-size: 1.22rem;
+            line-height: 1.35;
+        }
+
+        .brand-text p {
+            color: var(--teal);
+            font-size: 0.76rem;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 24px;
+        }
+
+        .main-nav a {
+            color: var(--navy);
+            font-size: 0.92rem;
+            font-weight: 700;
+            transition: color 0.2s ease;
+        }
+
+        .main-nav a:hover,
+        .main-nav a[aria-current="page"] {
+            color: var(--teal);
+        }
+
+        .main-nav .nav-cta {
+            background-color: var(--teal);
+            color: var(--white);
+            padding: 11px 17px;
+            border-radius: 5px;
+        }
+
+        .main-nav .nav-cta:hover {
+            background-color: var(--navy);
+            color: var(--white);
+        }
+
+        /* 3. Hero section */
+        .hero {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 75px 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 55px;
+        }
+
+        .hero-content .section-label {
+            color: var(--teal);
+            background-color: var(--white);
+            padding: 6px 12px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+        }
+
+        .hero-content h2 {
+            color: var(--white);
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            line-height: 1.12;
+            margin: 22px 0;
+            letter-spacing: -1.5px;
+        }
+
+        .hero-content > p {
+            color: var(--light-blue);
+            font-size: 1.08rem;
+            max-width: 540px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 48px;
+            padding: 13px 22px;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.2s ease,
+                        color 0.2s ease,
+                        transform 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-primary {
+            background-color: var(--teal);
+            color: var(--white);
+        }
+
+        .button-primary:hover {
+            background-color: var(--white);
+            color: var(--navy);
+        }
+
+        .button-light {
+            background-color: var(--white);
+            color: var(--navy);
+        }
+
+        .button-light:hover {
+            background-color: var(--light-blue);
+        }
+
+        .button-outline {
+            background-color: transparent;
+            border-color: var(--white);
+            color: var(--white);
+        }
+
+        .button-outline:hover {
+            background-color: var(--white);
+            color: var(--navy);
+        }
+
+        .hero-image-wrap {
+            position: relative;
+        }
+
+        .hero-image {
+            height: 430px;
+            object-fit: cover;
+            border-radius: 8px 75px 8px 75px;
+            border: 5px solid var(--white);
+        }
+
+        .hero-image-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background-color: var(--white);
+            color: var(--navy);
+            padding: 16px 20px;
+            border-left: 5px solid var(--teal);
+            border-radius: 4px;
+        }
+
+        .hero-image-caption strong {
+            display: block;
+            font-size: 1rem;
+        }
+
+        .hero-image-caption span {
+            font-size: 0.85rem;
+        }
+
+        /* 4. Hospital highlights */
+        .highlights {
+            background-color: var(--light-blue);
+            padding: 30px 0;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 13px;
+            text-align: left;
+            padding: 10px;
+        }
+
+        .highlight-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 47px;
+            height: 47px;
+            flex-shrink: 0;
+            background-color: var(--navy);
+            color: var(--white);
+            border-radius: 50%;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .highlight-item strong {
+            display: block;
+            color: var(--navy);
+            font-size: 1rem;
+        }
+
+        .highlight-item span {
+            display: block;
+            color: var(--dark-slate);
+            font-size: 0.85rem;
+        }
+
+        /* 5. About section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-image {
+            height: 420px;
+            object-fit: cover;
+            border-radius: 5px 80px 5px 80px;
+            border: 5px solid var(--light-blue);
+        }
+
+        .about-content h2 {
+            color: var(--navy);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            line-height: 1.2;
+            margin: 12px 0 20px;
+        }
+
+        .about-content > p {
+            margin-bottom: 18px;
+        }
+
+        .benefit-list {
+            list-style: none;
+            margin: 22px 0 28px;
+        }
+
+        .benefit-list li {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 12px;
+            color: var(--dark-slate);
+        }
+
+        .benefit-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 1px;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--teal);
+            color: var(--white);
+            border-radius: 50%;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* 6. Medical services */
+        .services-section {
+            background-color: var(--light-blue);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 28px 23px;
+            border: 1px solid var(--light-blue);
+            border-bottom: 4px solid var(--teal);
+            border-radius: 6px 6px 6px 24px;
+            transition: transform 0.2s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 57px;
+            height: 57px;
+            background-color: var(--navy);
+            color: var(--white);
+            border-radius: 8px 8px 8px 2px;
+            font-size: 1.65rem;
+            font-weight: 700;
+            margin-bottom: 19px;
+        }
+
+        .service-card h3 {
+            color: var(--navy);
+            font-size: 1.12rem;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            font-size: 0.92rem;
+            margin-bottom: 18px;
+        }
+
+        .text-link {
+            color: var(--teal);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .text-link:hover {
+            color: var(--navy);
+            text-decoration: underline;
+        }
+
+        /* 7. Medical team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .team-card {
+            overflow: hidden;
+            background-color: var(--white);
+            border: 1px solid var(--light-blue);
+            border-radius: 6px 6px 6px 30px;
+            text-align: center;
+        }
+
+        .team-image {
+            height: 290px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--teal);
+        }
+
+        .team-info {
+            padding: 23px;
+        }
+
+        .team-info h3 {
+            color: var(--navy);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .team-info .role {
+            color: var(--teal);
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .team-info p {
+            font-size: 0.92rem;
+        }
+
+        .team-action {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        /* 8. Why choose us */
+        .why-section {
+            background-color: var(--navy);
+            color: var(--white);
+        }
+
+        .why-section .section-heading h2,
+        .why-section .section-heading p {
+            color: var(--white);
+        }
+
+        .why-section .section-label {
+            color: var(--teal);
+            background-color: var(--white);
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .why-card {
+            padding: 28px;
+            border: 1px solid var(--light-blue);
+            border-radius: 6px 6px 6px 24px;
+        }
+
+        .why-card .highlight-icon {
+            background-color: var(--teal);
+            margin-bottom: 17px;
+        }
+
+        .why-card h3 {
+            color: var(--white);
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+        }
+
+        .why-card p {
+            color: var(--light-blue);
+            font-size: 0.93rem;
+        }
+
+        /* 9. Appointment call to action */
+        .appointment-section {
+            background-color: var(--white);
+        }
+
+        .appointment-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+            background-color: var(--light-blue);
+            border-left: 6px solid var(--teal);
+            padding: 40px;
+            border-radius: 5px 30px 5px 30px;
+        }
+
+        .appointment-content {
+            max-width: 700px;
+        }
+
+        .appointment-content h2 {
+            color: var(--navy);
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            line-height: 1.2;
+            margin-bottom: 13px;
+        }
+
+        .appointment-content p {
+            color: var(--dark-slate);
+        }
+
+        .appointment-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-width: 175px;
+        }
+
+        /* 10. Footer */
+        .site-footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 45px;
+            padding-bottom: 35px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .footer-brand .medical-logo {
+            background-color: var(--teal);
+        }
+
+        .footer-brand h2 {
+            font-size: 1.25rem;
+            line-height: 1.4;
+        }
+
+        .footer-brand p {
+            color: var(--light-blue);
+            font-size: 0.8rem;
+        }
+
+        .footer-about {
+            color: var(--light-blue);
+            font-size: 0.92rem;
+            max-width: 360px;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            font-size: 1.05rem;
+            margin-bottom: 18px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--light-blue);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--dark-slate);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom p {
+            color: var(--light-blue);
+            font-size: 0.85rem;
+        }
+
+        /* 11. Tablet responsiveness */
+        @media (max-width: 1000px) {
+            .header-inner {
+                flex-wrap: wrap;
+                padding: 15px 0;
+            }
+
+            .main-nav {
+                gap: 17px;
+            }
+
+            .hero-grid,
+            .about-grid {
+                gap: 35px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-image {
+                height: 390px;
+            }
+        }
+
+        /* 12. Mobile responsiveness */
+        @media (max-width: 760px) {
+            .section {
+                padding: 60px 0;
+            }
+
+            .header-inner {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .main-nav {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 10px 18px;
+            }
+
+            .main-nav a {
+                font-size: 0.88rem;
+            }
+
+            .hero-grid,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 55px 0;
+            }
+
+            .hero-content h2 {
+                font-size: clamp(2.3rem, 9vw, 3.3rem);
+            }
+
+            .hero-image {
+                height: 340px;
+                border-radius: 6px 55px 6px 55px;
+            }
+
+            .highlights-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .highlight-item {
+                justify-content: flex-start;
+            }
+
+            .about-image {
+                height: 330px;
+            }
+
+            .team-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-image {
+                height: 320px;
+            }
+
+            .appointment-box {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 28px;
+            }
+
+            .appointment-actions {
+                width: 100%;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+
+            .footer-about-column {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 460px) {
+            .container {
+                width: 92%;
+            }
+
+            .brand-text h1 {
+                font-size: 1.08rem;
+            }
+
+            .brand-text p {
+                font-size: 0.7rem;
+            }
+
+            .medical-logo {
+                width: 45px;
+                height: 45px;
+            }
+
+            .main-nav {
+                gap: 9px 14px;
+            }
+
+            .main-nav a {
+                font-size: 0.82rem;
+            }
+
+            .main-nav .nav-cta {
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-image {
+                height: 285px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-about-column {
+                grid-column: auto;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+        }
+
+        /* Respect users who prefer reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================
+         HEADER AND MAIN NAVIGATION
+         ========================================= -->
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <a class="brand" href="index.html" aria-label="Code Safari Hospital homepage">
+                <span class="medical-logo" aria-hidden="true">+</span>
+
+                <span class="brand-text">
+                    <h1>Code Safari Hospital</h1>
+                    <p>Compassionate Care. Healthier Lives.</p>
+                </span>
+            </a>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="index.html" aria-current="page">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="doctors.html">Our Doctors</a>
+                <a href="contact.html" class="nav-cta">Contact Us</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- =========================================
+             HERO SECTION
+             ========================================= -->
+        <section class="hero">
+            <div class="container hero-grid">
+
+                <div class="hero-content">
+                    <span class="section-label">Your Health, Our Priority</span>
+
+                    <h2>Quality Healthcare With a Human Touch</h2>
+
+                    <p>
+                        Welcome to Code Safari Hospital, where professional
+                        medical care meets compassion. We are committed to
+                        supporting individuals and families through reliable,
+                        respectful and patient-centred healthcare.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="services.html" class="button button-primary">
+                            Explore Our Services →
+                        </a>
+
+                        <a href="contact.html" class="button button-outline">
+                            Contact Our Team
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image-wrap">
+                    <img
+                        class="hero-image"
+                        src="images/hospital-building.jpg"
+                        alt="Modern hospital building representing Code Safari Hospital's healthcare environment"
+                        width="900"
+                        height="650"
+                        fetchpriority="high"
+                    >
+
+                    <div class="hero-image-caption">
+                        <strong>Care You Can Trust</strong>
+                        <span>Professional service. Compassionate people.</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+             HOSPITAL HIGHLIGHTS
+             ========================================= -->
+        <section class="highlights" aria-label="Hospital highlights">
+            <div class="container highlights-grid">
+
+                <div class="highlight-item">
+                    <span class="highlight-icon" aria-hidden="true">+</span>
+                    <div>
+                        <strong>Patient-First Care</strong>
+                        <span>Your wellbeing guides our approach.</span>
+                    </div>
+                </div>
+
+                <div class="highlight-item">
+                    <span class="highlight-icon" aria-hidden="true">♡</span>
+                    <div>
+                        <strong>Compassionate Service</strong>
+                        <span>Respect and dignity for every patient.</span>
+                    </div>
+                </div>
+
+                <div class="highlight-item">
+                    <span class="highlight-icon" aria-hidden="true">✓</span>
+                    <div>
+                        <strong>Quality-Focused Care</strong>
+                        <span>Committed to responsible healthcare.</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+             ABOUT THE HOSPITAL
+             ========================================= -->
+        <section class="section" id="about">
+            <div class="container about-grid">
+
+                <div>
+                    <img
+                        class="about-image"
+                        src="images/hospital-interior.jpg"
+                        alt="Welcoming and modern hospital interior"
+                        width="800"
+                        height="650"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="about-content">
+                    <span class="section-label">Welcome to Code Safari</span>
+
+                    <h2>Healthcare Built Around You</h2>
+
+                    <p>
+                        At Code Safari Hospital, we believe that healthcare
+                        should be accessible, respectful and centred on each
+                        patient's needs. Every person deserves to be listened
+                        to, informed and treated with dignity.
+                    </p>
+
+                    <p>
+                        Our hospital brings together a patient-focused approach,
+                        medical expertise and a commitment to continuous
+                        improvement to support healthier individuals and
+                        communities.
+                    </p>
+
+                    <ul class="benefit-list">
+                        <li>Patient-centred care and clear communication</li>
+                        <li>A welcoming environment for individuals and families</li>
+                        <li>A focus on prevention, wellbeing and health education</li>
+                        <li>Respect for patient privacy and dignity</li>
+                    </ul>
+
+                    <a href="about.html" class="button button-primary">
+                        Learn More About Us →
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+             MEDICAL SERVICES
+             ========================================= -->
+        <section class="section services-section" id="services">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Our Medical Services</span>
+
+                    <h2>Care for Every Stage of Life</h2>
+
+                    <p>
+                        Explore our key service areas and find a starting point
+                        for your healthcare needs. Contact the hospital to
+                        confirm service availability.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">+</div>
+
+                        <h3>General Consultation</h3>
+
+                        <p>
+                            Medical assessment, guidance and support for common
+                            health concerns and routine check-ups.
+                        </p>
+
+                        <a href="services.html" class="text-link">
+                            Explore Service →
+                        </a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">♡</div>
+
+                        <h3>Maternal &amp; Child Health</h3>
+
+                        <p>
+                            Support for mothers, children and families through
+                            important stages of growth and wellbeing.
+                        </p>
+
+                        <a href="services.html" class="text-link">
+                            Explore Service →
+                        </a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">⌕</div>
+
+                        <h3>Laboratory Services</h3>
+
+                        <p>
+                            Laboratory testing services to support clinical
+                            assessment and informed healthcare decisions.
+                        </p>
+
+                        <a href="services.html" class="text-link">
+                            Explore Service →
+                        </a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">✚</div>
+
+                        <h3>Preventive Healthcare</h3>
+
+                        <p>
+                            Health education, wellness checks and preventive
+                            guidance to support healthier lifestyles.
+                        </p>
+
+                        <a href="services.html" class="text-link">
+                            Explore Service →
+                        </a>
+                    </article>
+
+                </div>
+
+                <div class="team-action">
+                    <a href="services.html" class="button button-primary">
+                        View All Services →
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+             INTRODUCTION TO THE MEDICAL TEAM
+             ========================================= -->
+        <section class="section" id="doctors">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Our Medical Team</span>
+
+                    <h2>People Who Put Your Health First</h2>
+
+                    <p>
+                        Good healthcare starts with people who listen, explain
+                        and care. Our team section introduces the professionals
+                        who support the patient journey.
+                    </p>
+                </div>
+
+                <div class="team-grid">
+
+                    <article class="team-card">
+                        <img
+                            class="team-image"
+                            src="images/doctor-one.jpg"
+                            alt="Medical doctor in professional clinical attire"
+                            width="600"
+                            height="500"
+                            loading="lazy"
+                        >
+
+                        <div class="team-info">
+                            <h3>General Medical Team</h3>
+                            <p class="role">General Consultation</p>
+
+                            <p>
+                                Supporting patients with medical assessments,
+                                health guidance and appropriate follow-up.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="team-card">
+                        <img
+                            class="team-image"
+                            src="images/doctor-two.jpg"
+                            alt="Healthcare professional ready to provide patient care"
+                            width="600"
+                            height="500"
+                            loading="lazy"
+                        >
+
+                        <div class="team-info">
+                            <h3>Family Health Team</h3>
+                            <p class="role">Family &amp; Preventive Care</p>
+
+                            <p>
+                                Promoting wellbeing through health education,
+                                prevention and family-focused support.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="team-card">
+                        <img
+                            class="team-image"
+                            src="images/medical-team.jpg"
+                            alt="Medical professionals working together as a healthcare team"
+                            width="600"
+                            height="500"
+                            loading="lazy"
+                        >
+
+                        <div class="team-info">
+                            <h3>Our Support Team</h3>
+                            <p class="role">Coordinated Patient Support</p>
+
+                            <p>
+                                Helping patients navigate services and
+                                understand the next steps in their care.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="team-action">
+                    <a href="doctors.html" class="button button-primary">
+                        Meet Our Team →
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+             WHY CHOOSE US
+             ========================================= -->
+        <section class="section why-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">The Code Safari Difference</span>
+
+                    <h2>Care That Puts People First</h2>
+
+                    <p>
+                        We aim to make healthcare a more supportive,
+                        understandable and respectful experience for everyone.
+                    </p>
+                </div>
+
+                <div class="why-grid">
+
+                    <article class="why-card">
+                        <div class="highlight-icon" aria-hidden="true">♡</div>
+
+                        <h3>Compassion &amp; Respect</h3>
+
+                        <p>
+                            Every patient deserves to be treated with kindness,
+                            dignity and consideration throughout their visit.
+                        </p>
+                    </article>
+
+                    <article class="why-card">
+                        <div class="highlight-icon" aria-hidden="true">✓</div>
+
+                        <h3>Quality &amp; Responsibility</h3>
+
+                        <p>
+                            We value professional standards, clear communication
+                            and continuous improvement in patient care.
+                        </p>
+                    </article>
+
+                    <article class="why-card">
+                        <div class="highlight-icon" aria-hidden="true">+</div>
+
+                        <h3>Health Education</h3>
+
+                        <p>
+                            We encourage informed health decisions and greater
+                            awareness of prevention and general wellbeing.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+             CONTACT AND APPOINTMENT CALL TO ACTION
+             ========================================= -->
+        <section class="section appointment-section">
+            <div class="container">
+
+                <div class="appointment-box">
+                    <div class="appointment-content">
+                        <span class="section-label">Your Health Matters</span>
+
+                        <h2>Take the Next Step Towards Better Health</h2>
+
+                        <p>
+                            Have a question about our services or planning a
+                            hospital visit? Contact our team for information
+                            about available services and appointment procedures.
+                        </p>
+                    </div>
+
+                    <div class="appointment-actions">
+                        <a href="contact.html" class="button button-primary">
+                            Contact Us →
+                        </a>
+
+                        <a href="services.html" class="button button-light">
+                            Our Services
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+    <footer class="site-footer" id="footer">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-about-column">
+                    <div class="footer-brand">
+                        <span class="medical-logo" aria-hidden="true">+</span>
+
+                        <div>
+                            <h2>Code Safari Hospital</h2>
+                            <p>Compassionate Care. Healthier Lives.</p>
+                        </div>
+                    </div>
+
+                    <p class="footer-about">
+                        Dedicated to a welcoming, respectful and
+                        patient-centred healthcare experience. Our goal is to
+                        support healthier lives through compassionate care.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="doctors.html">Our Doctors</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Patient Information</h3>
+
+                    <ul class="footer-links">
+                        <li><a href="services.html">Medical Services</a></li>
+                        <li><a href="doctors.html">Medical Team</a></li>
+                        <li><a href="contact.html">Hospital Enquiries</a></li>
+                        <li><a href="about.html">About Our Hospital</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    &copy; 2026 Code Safari Hospital. All rights reserved.
+                </p>
+
+                <p>Compassionate Care. Healthier Lives.</p>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
