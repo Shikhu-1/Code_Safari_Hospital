@@ -1,0 +1,919 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Code Safari Hospital, our mission, vision, core values, and commitment to compassionate, safe, and accessible healthcare.">
+    <title>About Us | Code Safari Hospital</title>
+
+    <style>
+        /* ===== Global Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #FFFFFF;
+            color: #334155;
+            line-height: 1.7;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            color: #123B5D;
+            line-height: 1.3;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        .section {
+            padding: 75px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 45px;
+        }
+
+        .section-heading p {
+            margin-top: 12px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: #0D9488;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+
+        /* ===== Accessibility ===== */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 15px;
+            background-color: #FFFFFF;
+            color: #123B5D;
+            padding: 12px 18px;
+            z-index: 1000;
+            border: 2px solid #0D9488;
+        }
+
+        .skip-link:focus {
+            top: 15px;
+        }
+
+        a:focus-visible {
+            outline: 3px solid #0D9488;
+            outline-offset: 4px;
+        }
+
+        /* ===== Header and Navigation ===== */
+        .site-header {
+            background-color: #FFFFFF;
+            border-bottom: 1px solid #EAF4F8;
+        }
+
+        .header-content {
+            min-height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #123B5D;
+            color: #FFFFFF;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .brand-name {
+            color: #123B5D;
+            font-size: 1.2rem;
+            font-weight: bold;
+            line-height: 1.3;
+        }
+
+        .brand-tagline {
+            color: #334155;
+            font-size: 0.75rem;
+            margin-top: 4px;
+        }
+
+        .navigation ul {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .navigation a {
+            color: #123B5D;
+            font-size: 0.95rem;
+            font-weight: bold;
+            padding: 10px 0;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        .navigation a:hover,
+        .navigation a[aria-current="page"] {
+            color: #0D9488;
+        }
+
+        .navigation .nav-contact {
+            background-color: #0D9488;
+            color: #FFFFFF;
+            padding: 11px 18px;
+            border-radius: 6px;
+        }
+
+        .navigation .nav-contact:hover {
+            background-color: #123B5D;
+            color: #FFFFFF;
+        }
+
+        /* ===== Buttons ===== */
+        .btn {
+            display: inline-block;
+            padding: 13px 24px;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            background-color: #0D9488;
+            color: #FFFFFF;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #123B5D;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #123B5D;
+            border-color: #123B5D;
+        }
+
+        .btn-secondary:hover {
+            background-color: #123B5D;
+            color: #FFFFFF;
+        }
+
+        /* ===== About Hero ===== */
+        .about-hero {
+            background-color: #EAF4F8;
+            padding: 75px 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 55px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            margin-bottom: 22px;
+        }
+
+        .hero-text p {
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        /* ===== Hospital Background ===== */
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .story-text h2 {
+            margin-bottom: 22px;
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .story-note {
+            border-left: 4px solid #0D9488;
+            padding: 15px 20px;
+            background-color: #EAF4F8;
+            border-radius: 0 8px 8px 0;
+            margin-top: 22px;
+        }
+
+        /* ===== Mission and Vision ===== */
+        .purpose-section {
+            background-color: #EAF4F8;
+        }
+
+        .purpose-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .purpose-card {
+            background-color: #FFFFFF;
+            padding: 35px;
+            border-radius: 10px;
+            border-top: 4px solid #0D9488;
+        }
+
+        .purpose-card h3 {
+            font-size: 1.45rem;
+            margin-bottom: 15px;
+        }
+
+        .purpose-icon {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background-color: #EAF4F8;
+            color: #123B5D;
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* ===== Core Values ===== */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .value-card {
+            padding: 28px 22px;
+            border: 1px solid #EAF4F8;
+            border-radius: 10px;
+            background-color: #FFFFFF;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-card .purpose-icon {
+            margin: 0 auto 18px;
+        }
+
+        .value-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+        }
+
+        .value-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ===== Commitment to Care ===== */
+        .commitment-section {
+            background-color: #EAF4F8;
+        }
+
+        .commitment-content {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .commitment-text h2 {
+            margin-bottom: 20px;
+        }
+
+        .commitment-list {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .commitment-list li {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 18px;
+        }
+
+        .commitment-list li::before {
+            content: "\2713";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #0D9488;
+            font-weight: bold;
+            font-size: 1.15rem;
+        }
+
+        .commitment-image img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        /* ===== Call to Action ===== */
+        .cta-section {
+            background-color: #123B5D;
+            padding: 65px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: #FFFFFF;
+            margin-bottom: 18px;
+        }
+
+        .cta-section p {
+            color: #FFFFFF;
+            max-width: 680px;
+            margin: 0 auto 25px;
+        }
+
+        /* ===== Footer ===== */
+        .site-footer {
+            background-color: #123B5D;
+            color: #FFFFFF;
+            padding: 55px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 45px;
+            padding-bottom: 35px;
+        }
+
+        .footer-brand {
+            color: #FFFFFF;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .footer-content p {
+            color: #FFFFFF;
+            font-size: 0.95rem;
+        }
+
+        .footer-content h3 {
+            color: #FFFFFF;
+            font-size: 1.1rem;
+            margin-bottom: 18px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #FFFFFF;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #0D9488;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 950px) {
+            .header-content {
+                flex-direction: column;
+                padding: 20px 0;
+            }
+
+            .navigation ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px 22px;
+            }
+
+            .hero-content,
+            .story-content,
+            .commitment-content {
+                gap: 35px;
+            }
+
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-text h1 {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                width: 92%;
+            }
+
+            .section {
+                padding: 55px 0;
+            }
+
+            .about-hero {
+                padding: 50px 0;
+            }
+
+            .hero-content,
+            .story-content,
+            .purpose-grid,
+            .commitment-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            .hero-image img,
+            .story-image img,
+            .commitment-image img {
+                height: 270px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .purpose-card {
+                padding: 28px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .navigation ul {
+                gap: 8px 16px;
+            }
+
+            .navigation a {
+                font-size: 0.88rem;
+            }
+        }
+
+        /* Respect visitors who prefer reduced motion. */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- ===== Website Header ===== -->
+    <header class="site-header">
+        <div class="container header-content">
+
+            <a class="brand" href="index.html" aria-label="Code Safari Hospital home">
+                <span class="brand-icon" aria-hidden="true">+</span>
+                <span>
+                    <span class="brand-name">Code Safari Hospital</span>
+                    <span class="brand-tagline">Compassionate Care. Healthier Lives.</span>
+                </span>
+            </a>
+
+            <nav class="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" aria-current="page">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a class="nav-contact" href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- ===== About Hero Section ===== -->
+        <section class="about-hero">
+            <div class="container hero-content">
+
+                <div class="hero-text">
+                    <span class="eyebrow">Get to Know Us</span>
+                    <h1>About Code Safari Hospital</h1>
+
+                    <p>
+                        Compassionate Care. Healthier Lives.
+                        We are committed to putting people first by promoting
+                        respectful, patient-focused healthcare in a welcoming
+                        and supportive environment.
+                    </p>
+
+                    <p>
+                        Discover our purpose, the values that guide us, and
+                        our commitment to making healthcare more accessible
+                        to the people and communities we serve.
+                    </p>
+
+                
+                </div>
+
+                <div class="hero-image">
+                    <img
+                        src="images/about-first.jpg"
+                        alt="Exterior of a modern hospital building"
+                        width="600"
+                        height="400"
+                    >
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== Hospital Background ===== -->
+        <section class="section">
+            <div class="container story-content">
+
+                <div class="story-image">
+                    <img
+                        src="images/about-second.jpg"
+                        alt="Healthcare professional providing attentive patient care"
+                        width="600"
+                        height="400"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="story-text">
+                    <span class="eyebrow">Who We Are</span>
+                    <h2>Healthcare With People at Heart</h2>
+
+                    <p>
+                        Code Safari Hospital is a sample healthcare institution
+                        developed around the idea that every person deserves
+                        to be treated with dignity, kindness, and respect.
+                    </p>
+
+                    <p>
+                        Our purpose is to represent a welcoming healthcare
+                        environment where patients can learn about available
+                        services, understand their care options, and find
+                        information that helps them take informed steps
+                        towards better health.
+                    </p>
+
+                    <p>
+                        We believe that good healthcare involves more than
+                        treatment. It also means listening to patients,
+                        communicating clearly, and recognising the needs
+                        of every individual.
+                    </p>
+
+                    <div class="story-note">
+                        <strong>Our guiding principle:</strong>
+                        Compassionate care should begin with listening,
+                        understanding, and respecting every patient.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== Mission and Vision ===== -->
+        <section class="section purpose-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">Our Purpose</span>
+                    <h2>Our Mission and Vision</h2>
+                    <p>
+                        These guiding principles express the kind of healthcare
+                        experience Code Safari Hospital aims to provide.
+                    </p>
+                </div>
+
+                <div class="purpose-grid">
+
+                    <article class="purpose-card">
+                        <div class="purpose-icon" aria-hidden="true">M</div>
+                        <h3>Our Mission</h3>
+                        <p>
+                            To promote accessible, respectful, and
+                            patient-centred healthcare by prioritising
+                            compassion, clear communication, patient safety,
+                            and individual needs.
+                        </p>
+                    </article>
+
+                    <article class="purpose-card">
+                        <div class="purpose-icon" aria-hidden="true">V</div>
+                        <h3>Our Vision</h3>
+                        <p>
+                            To represent a trusted healthcare environment
+                            where people feel heard, supported, and encouraged
+                            to make informed decisions about their health
+                            and wellbeing.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Core Values ===== -->
+        <section class="section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">What Guides Us</span>
+                    <h2>Our Core Values</h2>
+                    <p>
+                        Our values shape how we approach patients, communicate
+                        with families, and think about the delivery of care.
+                    </p>
+                </div>
+
+                <div class="values-grid">
+
+                    <article class="value-card">
+                        <div class="purpose-icon" aria-hidden="true">C</div>
+                        <h3>Compassion</h3>
+                        <p>
+                            Treating every person with kindness, empathy,
+                            patience, and understanding.
+                        </p>
+                    </article>
+
+                    <article class="value-card">
+                        <div class="purpose-icon" aria-hidden="true">S</div>
+                        <h3>Safety</h3>
+                        <p>
+                            Making patient safety, responsible care, and
+                            clear communication priorities.
+                        </p>
+                    </article>
+
+                    <article class="value-card">
+                        <div class="purpose-icon" aria-hidden="true">I</div>
+                        <h3>Integrity</h3>
+                        <p>
+                            Promoting honesty, respect, accountability,
+                            and responsible decision-making.
+                        </p>
+                    </article>
+
+                    <article class="value-card">
+                        <div class="purpose-icon" aria-hidden="true">A</div>
+                        <h3>Accessibility</h3>
+                        <p>
+                            Encouraging an inclusive environment where
+                            people can find and understand healthcare
+                            information.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Commitment to Quality Care ===== -->
+        <section class="section commitment-section">
+            <div class="container commitment-content">
+
+                <div class="commitment-text">
+                    <span class="eyebrow">Our Commitment</span>
+                    <h2>Care That Respects Every Individual</h2>
+
+                    <p>
+                        A positive healthcare experience begins with trust.
+                        We aim to present care information clearly and
+                        encourage respectful interactions throughout
+                        the patient journey.
+                    </p>
+
+                    <ul class="commitment-list">
+                        <li>
+                            <strong>Quality healthcare:</strong>
+                            Supporting informed care and responsible
+                            healthcare practices.
+                        </li>
+
+                        <li>
+                            <strong>Patient safety:</strong>
+                            Recognising the importance of safe practices
+                            and clear communication.
+                        </li>
+
+                        <li>
+                            <strong>Compassionate service:</strong>
+                            Treating patients and families with dignity,
+                            empathy, and respect.
+                        </li>
+
+                        <li>
+                            <strong>Accessible information:</strong>
+                            Making website information clear, readable,
+                            and easy to navigate.
+                        </li>
+                    </ul>
+
+                    <a class="btn" href="services.html">View Our Services</a>
+                </div>
+
+                <div class="commitment-image">
+                    <img
+                        src="images/about-third.jpg"
+                        alt="A healthcare professional speaking with a patient in a care setting"
+                        width="600"
+                        height="400"
+                        loading="lazy"
+                    >
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== Call to Action ===== -->
+        <section class="cta-section">
+            <div class="container">
+
+                <h2>We Are Here to Help You Find the Right Information</h2>
+
+                <p>
+                    Explore our sample healthcare services or contact us
+                    to learn more about the information presented on
+                    the Code Safari Hospital website.
+                </p>
+
+                <a class="btn" href="contact.html">Get in Touch</a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== Website Footer ===== -->
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div>
+                    <h2 class="footer-brand">Code Safari Hospital</h2>
+
+                    <p>
+                        Compassionate Care. Healthier Lives.
+                    </p>
+
+                    <p>
+                        A sample hospital website focused on presenting
+                        healthcare information in a welcoming,
+                        accessible, and professional way.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Quick Links</h3>
+
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="doctors.html">Our Doctors</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Explore Our Website</h3>
+
+                    <p>
+                        Learn about our purpose, discover sample healthcare
+                        services, and explore the information available
+                        throughout the website.
+                    </p>
+
+                    <a class="btn" href="services.html">Explore Services</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    &copy; 2026 Code Safari Hospital.
+                    Group project for educational purposes.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
